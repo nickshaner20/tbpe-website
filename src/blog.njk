@@ -1,0 +1,23 @@
+---
+layout: base.njk
+permalink: "blog.html"
+title: "Tampa Bay Rental & Landlord Blog | Tampa Bay Property Experts"
+description: "Tips and local market insights for Tampa Bay landlords and renters — property management costs, Florida landlord law, neighborhood rental reports, and more."
+---
+<section class="phero" style="padding:58px 0 50px"><div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> › Blog</div>
+  <h1>Tampa Bay rental insights</h1>
+  <p>Local market reports and practical advice for owners and renters across Tampa Bay.</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="post-grid">
+    {% for post in collections.post %}
+    <a class="post" href="{{ post.url }}">
+      <div class="thumb" style="background-image:linear-gradient(rgba(10,33,51,.15),rgba(10,33,51,.15)),url('{% if post.data.thumbnail %}{{ post.data.thumbnail }}{% else %}https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80{% endif %}')"></div>
+      <div class="body"><span class="tag">{{ post.data.tag }}</span><h3>{{ post.data.title }}</h3><p>{{ post.data.excerpt }}</p><div class="meta">{{ post.date | readableDate }}</div></div>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="note-box" style="margin-top:2rem"><b>Publishing plan:</b> we recommend launching at 2 fresh, locally focused posts per month and ramping toward weekly — enough to keep Google crawling the site as active while prioritizing quality and depth over volume. New posts are added in the admin panel and appear here automatically.</div>
+</div></section>

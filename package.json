@@ -1,0 +1,12 @@
+{
+  "name": "tbpe-website",
+  "version": "1.0.0",
+  "description": "Tampa Bay Property Experts website (Eleventy + Decap CMS)",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

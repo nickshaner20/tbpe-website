@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<section class="phero" style="padding:56px 0 48px"><div class="wrap" style="max-width:760px">
+  <div class="crumbs"><a href="/">Home</a> › <a href="/blog.html">Blog</a> › {{ title }}</div>
+  <span class="tag" style="color:var(--gold)">{{ tag }}</span>
+  <h1 style="margin-top:.4rem">{{ title }}</h1>
+  {% if excerpt %}<p>{{ excerpt }}</p>{% endif %}
+</div></section>
+
+<section><div class="article">
+  {% if thumbnail %}<div class="feat-img" style="min-height:300px;background-image:linear-gradient(rgba(10,33,51,.08),rgba(10,33,51,.08)),url('{{ thumbnail }}');margin-bottom:1.8rem"></div>{% endif %}
+  {{ content | safe }}
+  <div class="note-box" style="margin:2rem 0"><b>Thinking about professional management?</b> Get a free, no-obligation rental analysis for your Tampa Bay property — a market rent estimate plus a custom quote.</div>
+  <div class="center"><a class="btn btn-primary btn-lg" href="/owners.html">Get My Free Rental Analysis</a></div>
+  <p style="font-size:.82rem;color:var(--muted-2);margin-top:1.6rem">Published {{ date | readableDate }}. This article is general information, not legal or financial advice.</p>
+</div></section>

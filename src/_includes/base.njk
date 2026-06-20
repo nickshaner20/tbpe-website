@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if title %}{{ title }}{% else %}{{ site.companyName }}{% endif %}</title>
+<meta name="description" content="{{ description or excerpt }}">
+<link rel="canonical" href="{{ site.domain }}{{ page.url }}">
+<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.companyName }}{% endif %}">
+<meta property="og:description" content="{{ description or excerpt }}">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <div class="tb-left"><span>📞 <a href="tel:{{ site.phoneRaw }}">{{ site.phone }}</a></span><span class="hide-sm">🕑 {{ site.hours }}</span></div>
+  <div class="tb-right"><a href="/owners.html">Owners → Free Rental Analysis</a></div>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-label="TBPE logo"><rect width="48" height="48" rx="12" fill="#0a2133"/><path d="M24 9l13 10v4L24 13 11 23v-4L24 9z" fill="#13b5a6"/><path d="M14 24l10-7.5L34 24v13a2 2 0 0 1-2 2h-5v-8h-6v8h-5a2 2 0 0 1-2-2V24z" fill="#fff"/><path d="M9 36c3 0 3 2 6 2s3-2 6-2 3 2 6 2 3-2 6-2 3 2 6 2" stroke="#f6b73c" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <span class="bn">{{ site.companyName }}<small>{{ site.tagline }}</small></span>
+  </a>
+  <nav class="main-links"><ul>
+    <li><a href="/owners.html">Owners</a></li>
+    <li><a href="/tenants.html">Tenants</a></li>
+    <li><a href="/areas.html">Areas We Serve</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul></nav>
+  <div class="nav-cta">
+    <a class="btn btn-outline" href="/pay-rent.html">Pay Rent</a>
+    <a class="btn btn-primary" href="/apply.html">Apply Now</a>
+  </div>
+</div></header>
+
+{{ content | safe }}
+
+<footer><div class="wrap">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="brand"><svg class="mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#13315a"/><path d="M14 24l10-7.5L34 24v13a2 2 0 0 1-2 2h-5v-8h-6v8h-5a2 2 0 0 1-2-2V24z" fill="#fff"/></svg><span class="bn" style="color:#fff">{{ site.companyName }}</span></div>
+      <p>Full-service residential property management serving Tampa Bay since 2015.</p>
+      <span class="badge">FL Broker License {{ site.license }}</span>
+    </div>
+    <div><h5>Company</h5><a href="/owners.html">For Owners</a><a href="/tenants.html">For Tenants</a><a href="/areas.html">Areas We Serve</a><a href="/blog.html">Blog</a><a href="/about.html">About</a></div>
+    <div><h5>Tenants</h5><a href="/apply.html">Apply Now</a><a href="/pay-rent.html">Pay Rent (ACH)</a><a href="/maintenance.html">Maintenance Request</a><a href="/contact.html">Contact Us</a></div>
+    <div><h5>Contact</h5><a href="tel:{{ site.phoneRaw }}">📞 {{ site.phone }}</a><a href="mailto:{{ site.email }}">✉️ {{ site.email }}</a><a href="/contact.html">📍 {{ site.addressLine }}</a><span style="display:block;margin-top:.6rem;color:#7ba0b3">{{ site.broker }}</span></div>
+  </div>
+  <div class="foot-bottom"><div>© 2026 {{ site.companyName }}, LLC. All rights reserved.</div><div>🏠 Equal Housing Opportunity · Privacy · Accessibility</div></div>
+</div></footer>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function (user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function () { document.location.href = "/admin/"; });
+      }
+    });
+  }
+</script>
+</body>
+</html>

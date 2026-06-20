@@ -1,0 +1,60 @@
+---
+layout: base.njk
+permalink: "pay-rent.html"
+title: "Pay Rent Online (ACH) | Tampa Bay Property Experts"
+description: "Pay your rent online by secure bank transfer (ACH). Low flat fee, no credit-card surcharges. Fast, safe, and easy for Tampa Bay tenants."
+---
+<section class="phero" style="padding:60px 0 52px;background:linear-gradient(120deg,rgba(8,26,40,.93),rgba(14,65,80,.8)),url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1700&q=80') center/cover">
+  <div class="wrap">
+    <div class="crumbs"><a href="/">Home</a> › <a href="tenants.html">Tenants</a> › Pay Rent</div>
+    <h1>Pay rent online — the smart, low-fee way</h1>
+    <p>Pay securely by bank transfer (ACH). No credit-card surcharges, no surprises. Just a low flat fee and instant confirmation.</p>
+  </div>
+</section>
+
+<div class="trust"><div class="wrap">
+  <div>🏦 <b>ACH bank transfer</b> only</div><div>💲 <b>Low flat fee</b> (no % of rent)</div>
+  <div>🚫 <b>No</b> credit/debit surcharges</div><div>📩 <b>Instant</b> receipt</div>
+</div></div>
+
+<section>
+  <div class="wrap" style="display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:start">
+    <div>
+      <div class="kicker">Why ACH</div>
+      <h2 style="font-size:2.1rem;margin:.5rem 0 1rem">Lower cost for you, simpler for everyone</h2>
+      <p class="lead-2 mb1">We collect rent by ACH bank transfer instead of credit cards. Card processing adds 3%+ in fees — on a $1,800 rent that's over $50 every month. ACH keeps your cost to a small flat fee.</p>
+      <ul class="checks">
+        <li><b>One low flat fee</b> per payment — typically around <b>$1–$3</b>, not a percentage of your rent</li>
+        <li><b>Set up autopay</b> so you never miss a due date or late fee</li>
+        <li><b>Bank-level security</b> — your account is verified and encrypted</li>
+        <li><b>Instant emailed receipt</b> and full payment history</li>
+      </ul>
+      <div class="note-box" style="margin-top:1.2rem"><b>Heads up:</b> we don't accept credit or debit cards for rent. ACH is safer and far cheaper for tenants — the small flat fee covers processing only.</div>
+    </div>
+    <div class="form-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:.5rem">
+        <h3 style="font-size:1.35rem">Make a Payment</h3><span class="secure-tag">🔒 Bank-level security</span>
+      </div>
+      <form onsubmit="this.style.display='none';document.getElementById('paid').style.display='block';return false">
+        <div class="frow one"><div class="field"><label>Tenant name</label><input required></div></div>
+        <div class="frow one"><div class="field"><label>Property address</label><input required placeholder="Unit / street"></div></div>
+        <div class="frow"><div class="field"><label>Payment amount</label><input required placeholder="$1,800.00"></div><div class="field"><label>Payment type</label><select><option>Monthly rent</option><option>Partial payment</option><option>Deposit</option><option>Other</option></select></div></div>
+        <div class="field" style="margin-bottom:14px"><label>Bank account</label>
+          <div style="display:flex;gap:.6rem;align-items:center;border:1px dashed var(--line);border-radius:10px;padding:.85rem 1rem;background:#fbfdfe">
+            <span style="font-size:1.3rem">🏦</span><span style="font-size:.92rem;color:var(--muted)">Securely connect your bank in one click at checkout</span>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted);padding:.4rem 0;border-top:1px solid var(--line);margin-top:.4rem">
+          <span>Processing fee (flat)</span><b style="color:var(--navy)">$2.00</b>
+        </div>
+        <label style="display:flex;gap:.5rem;font-size:.85rem;color:var(--muted);margin:.7rem 0"><input type="checkbox" required style="width:auto;margin-top:.2rem"> I authorize this one-time ACH debit (autopay optional next).</label>
+        <button class="btn btn-primary btn-lg" type="submit" style="width:100%;justify-content:center">Pay Rent Securely →</button>
+        <p class="center" style="font-size:.78rem;color:var(--muted-2);margin-top:.7rem">Demo form. At launch this connects to your ACH processor / property management software.</p>
+      </form>
+      <div id="paid" style="display:none;text-align:center;padding:24px">
+        <div style="font-size:2.4rem">✅</div><h3>Payment submitted!</h3>
+        <p style="color:var(--muted)">A receipt would be emailed to you instantly in the live version.</p>
+      </div>
+    </div>
+  </div>
+</section>

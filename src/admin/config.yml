@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/uploads"
+public_folder: "/uploads"
+
+site_url: https://www.tampabaypropertyexperts.com
+display_url: https://www.tampabaypropertyexperts.com
+
+collections:
+  # ---------- Editable site-wide settings ----------
+  - name: "settings"
+    label: "Site Settings"
+    description: "Phone, email, address and the homepage hero text."
+    files:
+      - name: "contact"
+        label: "Contact & Business Info"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Company name", name: "companyName", widget: "string" }
+          - { label: "Tagline (under logo)", name: "tagline", widget: "string" }
+          - { label: "Phone (as shown)", name: "phone", widget: "string" }
+          - { label: "Phone digits (tap-to-call, no spaces)", name: "phoneRaw", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Office address", name: "addressLine", widget: "string" }
+          - { label: "Broker", name: "broker", widget: "string" }
+          - { label: "License number", name: "license", widget: "string" }
+          - { label: "Hours", name: "hours", widget: "string" }
+          - { label: "Management fee 'from'", name: "feeFrom", widget: "string" }
+          - { label: "Website domain (with https://)", name: "domain", widget: "string" }
+      - name: "homepage"
+        label: "Homepage Hero"
+        file: "src/_data/home.json"
+        fields:
+          - { label: "Small eyebrow text", name: "heroEyebrow", widget: "string" }
+          - { label: "Main heading", name: "heroHeading", widget: "string" }
+          - { label: "Heading highlight (gold words)", name: "heroHighlight", widget: "string" }
+          - { label: "Intro paragraph", name: "heroLead", widget: "text" }
+          - { label: "Primary button label", name: "ctaPrimary", widget: "string" }
+          - { label: "Secondary button label", name: "ctaSecondary", widget: "string" }
+
+  # ---------- Blog ----------
+  - name: "blog"
+    label: "Blog Posts"
+    description: "Write and publish blog articles. New posts appear on the site automatically."
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Category tag", name: "tag", widget: "select", default: "For Owners", options: ["For Owners", "For Renters", "Local Market", "Landlord Law", "Investing"] }
+      - { label: "Thumbnail image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Short summary (shown on blog list & search)", name: "excerpt", widget: "text" }
+      - { label: "Article body", name: "body", widget: "markdown" }
